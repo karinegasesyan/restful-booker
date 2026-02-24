@@ -183,7 +183,6 @@ This suite showcases essential QA automation competencies:
 
 Karine Gasesyan — QA Automation Engineer  
 GitHub: https://github.com/karinegasesyan  
-LinkedIn: *(Add your LinkedIn URL here)*
 
 ---
 
