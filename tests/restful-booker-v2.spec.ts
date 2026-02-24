@@ -162,6 +162,27 @@ test.describe("API documentation for the playground API restful-booker", () => {
     expect(data.booking.bookingdates).toHaveProperty("checkout", "2019-01-01");
     expect(data.booking).toHaveProperty("additionalneeds", "Breakfast");
   });
+});
+
+test.describe("Tests with Auth", () => {
+  let token: string;
+
+  test.beforeEach(async ({ request }) => {
+    const response = await request.post(
+      "https://restful-booker.herokuapp.com/auth",
+      {
+        headers: { "Content-Type": "application/json" },
+        data: { username: "admin", password: "password123" },
+      },
+    );
+
+    expect(response.ok()).toBeTruthy();
+    expect(response.status()).toBe(200);
+
+    const data = await response.json();
+    expect(data).toHaveProperty("token");
+    token = data.token;
+  });
 
   test("Booking - UpdateBooking", async ({ request }) => {
     const existingBookingId = 1;
@@ -177,18 +198,6 @@ test.describe("API documentation for the playground API restful-booker", () => {
       additionalneeds: "Breakfast",
     };
 
-    // Get auth token
-    const authResponse = await request.post(
-      "https://restful-booker.herokuapp.com/auth",
-      {
-        headers: { "Content-Type": "application/json" },
-        data: { username: "admin", password: "password123" },
-      },
-    );
-
-    const { token } = await authResponse.json();
-
-    // Update booking
     const updateResponse = await request.put(
       `https://restful-booker.herokuapp.com/booking/${existingBookingId}`,
       {
@@ -225,18 +234,6 @@ test.describe("API documentation for the playground API restful-booker", () => {
       lastname: "Brown",
     };
 
-    // Get auth token
-    const authResponse = await request.post(
-      "https://restful-booker.herokuapp.com/auth",
-      {
-        headers: { "Content-Type": "application/json" },
-        data: { username: "admin", password: "password123" },
-      },
-    );
-
-    const { token } = await authResponse.json();
-
-    // Update booking (Partial)
     const updateResponse = await request.patch(
       `https://restful-booker.herokuapp.com/booking/${existingBookingId}`,
       {
@@ -278,16 +275,6 @@ test.describe("API documentation for the playground API restful-booker", () => {
     );
     const { bookingid } = await createResponse.json();
 
-    // Get auth token
-    const authResponse = await request.post(
-      "https://restful-booker.herokuapp.com/auth",
-      {
-        headers: { "Content-Type": "application/json" },
-        data: { username: "admin", password: "password123" },
-      },
-    );
-    const { token } = await authResponse.json();
-
     // Delete the booking
     const deleteResponse = await request.delete(
       `https://restful-booker.herokuapp.com/booking/${bookingid}`,
@@ -302,12 +289,12 @@ test.describe("API documentation for the playground API restful-booker", () => {
     expect(deleteResponse.ok()).toBe(true);
     expect(deleteResponse.status()).toBe(201);
   });
+});
 
-  test("Ping - HealthCheck", async ({ request }) => {
-    const response = await request.get(
-      "https://restful-booker.herokuapp.com/ping",
-    );
-    expect(response.ok()).toBe(true);
-    expect(response.status()).toBe(201);
-  });
+test("Ping - HealthCheck", async ({ request }) => {
+  const response = await request.get(
+    "https://restful-booker.herokuapp.com/ping",
+  );
+  expect(response.ok()).toBe(true);
+  expect(response.status()).toBe(201);
 });
