@@ -1,1 +1,190 @@
-# restful-booker
+# Restful Booker API Automation 🧪
+
+Automated API testing suite for the **Restful Booker API** built with **Playwright** and **TypeScript**.
+
+This project contains end-to-end automated tests covering core REST API operations including creation, retrieval, update, and deletion of Booking data.
+
+---
+
+## 👩‍💻 Author
+
+**Karine Gasesyan**  
+QA Automation Engineer | Playwright | API Testing | 10+ Years Frontend Development  
+GitHub: https://github.com/karinegasesyan
+
+---
+
+## 📌 Project Overview
+
+The goal of this project is to automate tests for the Restful Booker API:
+
+🔗 https://restful-booker.herokuapp.com
+
+The suite covers:
+
+- ✔ HTTP status code verification
+- ✔ Proper CRUD (Create, Read, Update, Delete) workflows
+- ✔ Response validation
+- ✔ Header and schema checks
+- ✔ Token authentication for secured endpoints
+
+This automation suite is written in **TypeScript** and uses **Playwright API testing** for stability and readability.
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Playwright** | API automation framework |
+| **TypeScript** | Strong typing & sustainable code |
+| **Node.js & npm** | Dependency management |
+| **REST API testing** | API validation logic |
+
+---
+
+## 📂 Project Structure
+
+```
+restful-booker/
+│
+├── tests/
+│   ├── booking-create.spec.ts
+│   ├── booking-delete.spec.ts
+│   ├── booking-get.spec.ts
+│   └── booking-update.spec.ts
+│
+├── fixtures/
+│   └── sample-data.json
+├── package.json
+├── playwright.config.ts
+└── README.md
+```
+
+---
+
+## 🔧 Installation
+
+### 📥 1. Clone the repository
+
+```bash
+git clone https://github.com/karinegasesyan/restful-booker.git
+```
+
+### 📁 2. Navigate to project folder
+
+```bash
+cd restful-booker
+```
+
+### 📦 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 📌 4. Install Playwright browsers (if required)
+
+```bash
+npx playwright install
+```
+
+---
+
+## 🚀 Running Tests
+
+### Run all tests
+
+```bash
+npx playwright test
+```
+
+### Run tests in UI mode
+
+```bash
+npx playwright test --ui
+```
+
+### Run with detailed reporter
+
+```bash
+npx playwright test --reporter=list
+```
+
+---
+
+## 🧪 Test Coverage
+
+### ✅ Create Booking
+
+- Create a new booking
+- Validate response payload
+- Verify booking details
+
+### ✅ Retrieve Booking
+
+- Get booking list
+- Retrieve booking by ID
+- Validate response status & body
+
+### ✅ Update Booking
+
+- Modify booking data
+- Validate updated fields
+- Verify PUT & PATCH handling
+
+### ✅ Delete Booking
+
+- Delete a specific booking
+- Verify success status
+
+### ✅ Token Authentication
+
+- Create and validate auth token
+- Ensure secure endpoint access
+
+---
+
+## 🔎 Example Validations
+
+Common assertions include:
+
+- `expect(response.status()).toBe(200)`
+- Check required fields in response body
+- Validate returned JSON matches expected schema
+- Verify DELETE returns appropriate code
+
+---
+
+## 🎯 Key Skills Demonstrated
+
+This project highlights:
+
+- API automation using Playwright
+- End-to-end API flow coverage
+- Authentication handling
+- Test data management
+- Clean, maintainable TypeScript code
+
+---
+
+## 📈 Project Benefits
+
+This suite showcases essential QA automation competencies:
+
+✔ Designing test workflows  
+✔ Verifying backend service behavior  
+✔ Writing scalable API tests  
+✔ Combining authentication + CRUD operations
+
+---
+
+## 📫 Contact & Portfolio
+
+Karine Gasesyan — QA Automation Engineer  
+GitHub: https://github.com/karinegasesyan  
+LinkedIn: *(Add your LinkedIn URL here)*
+
+---
+
+⭐ Feel free to explore the tests and connect for collaboration or questions!
