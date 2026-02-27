@@ -13,8 +13,7 @@ on:
         options:
           - all
           - ping
-          - currency
-          - search
+          - auth
         default: all
 
 jobs:
