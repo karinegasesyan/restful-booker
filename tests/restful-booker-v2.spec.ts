@@ -164,7 +164,7 @@ test.describe("API documentation for the playground API restful-booker", () => {
   });
 });
 
-test.describe("Tests with Auth", () => {
+test.describe("@auth Tests with Auth", () => {
   let token: string;
 
   test.beforeEach(async ({ request }) => {
@@ -291,7 +291,7 @@ test.describe("Tests with Auth", () => {
   });
 });
 
-test("Ping - HealthCheck", async ({ request }) => {
+test("@ping Ping - HealthCheck", async ({ request }) => {
   const response = await request.get(
     "https://restful-booker.herokuapp.com/ping",
   );
