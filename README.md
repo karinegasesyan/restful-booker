@@ -49,13 +49,11 @@ This automation suite is written in **TypeScript** and uses **Playwright API tes
 restful-booker/
 │
 ├── tests/
-│   ├── booking-create.spec.ts
-│   ├── booking-delete.spec.ts
-│   ├── booking-get.spec.ts
-│   └── booking-update.spec.ts
+│   ├── tests/restful-booker.spec.ts
+│   ├── tests/restful-booker-v2.spec.ts
+│  
 │
 ├── fixtures/
-│   └── sample-data.json
 ├── package.json
 ├── playwright.config.ts
 └── README.md
