@@ -101,14 +101,6 @@ npx playwright test
 npx playwright test --ui
 ```
 
-### Run with detailed reporter
-
-```bash
-npx playwright test --reporter=list
-```
-
----
-
 ## 🧪 Test Coverage
 
 ### ✅ Create Booking
