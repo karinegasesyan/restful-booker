@@ -52,8 +52,6 @@ restful-booker/
 │   ├── tests/restful-booker.spec.ts
 │   ├── tests/restful-booker-v2.spec.ts
 │  
-│
-├── fixtures/
 ├── package.json
 ├── playwright.config.ts
 └── README.md
